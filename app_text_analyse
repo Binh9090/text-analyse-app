@@ -1,0 +1,30 @@
+# Trình phân tích văn bản siêu đơn giản 🐍💥
+
+# Bước 1: Nhập văn bản vào
+text = input("Nhập đoạn văn của bạn: ")
+
+# Bước 2: Phân tích từ
+words = text.split()  # Tách từ bằng cách phân tách khoảng trắng
+word_count = len(words)
+print("Tổng số từ:", word_count)
+
+# Bước 3: Phân tích câu
+sentences = text.split('.')  # Tách câu bằng dấu chấm
+sentence_count = len([s for s in sentences if s.strip() != ''])  # Loại bỏ câu rỗng
+print("Tổng số câu:", sentence_count)
+
+# Bước 4: Phân tích đoạn văn
+paragraphs = text.split('\n')  # Tách đoạn văn bằng cách xuống dòng
+paragraph_count = len([p for p in paragraphs if p.strip() != ''])  # Loại bỏ đoạn rỗng
+print("Tổng số đoạn văn:", paragraph_count)
+
+# Bước 5: Tóm tắt kết quả
+print("\nTóm tắt phân tích:")
+print(f"Số từ: {word_count}")
+print(f"Số câu: {sentence_count}")
+print(f"Số đoạn văn: {paragraph_count}")
+
+# Optional: Xuất ra danh sách các từ
+print("\nDanh sách các từ:")
+for i, word in enumerate(words, start=1):
+    print(f"{i}: {word}")
